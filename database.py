@@ -2,8 +2,10 @@ from sqlalchemy import create_engine, Integer, String, Boolean, ForeignKey
 from sqlalchemy.orm import DeclarativeBase, mapped_column, sessionmaker
 
 
-DB_URL = 'sqlite:///todo.sqlite3'
-engine = create_engine(DB_URL, connect_args={'check_same_thread': False})
+# DB_URL = 'sqlite:///todo.sqlite3'
+DB_URL = 'postgresql+psycopg2://postgres:test1234!@localhost:5432/TodoApplicationDatabase'
+
+engine = create_engine(DB_URL)
 
 
 class Base(DeclarativeBase):
